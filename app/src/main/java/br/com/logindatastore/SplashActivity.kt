@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import br.com.logindatastore.databinding.ActivitySplashBinding
+import kotlinx.coroutines.runBlocking
 
 class SplashActivity : AppCompatActivity() {
 
@@ -18,9 +20,21 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this@SplashActivity, RegistrationActivity::class.java)
-            startActivity(intent)
+            verifyUserLogged()
             finish()
         }, 3000)
+    }
+
+    private fun verifyUserLogged(){
+        runBlocking {
+            val hasLogin = DataStoreManager.readDataStore(booleanPreferencesKey("HAS_LOGIN")) ?: false
+            if(!hasLogin){
+                val intent = Intent(this@SplashActivity, LoginActivity::class.java)
+                startActivity(intent)
+            } else {
+                val intent = Intent(this@SplashActivity, HomeActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 }

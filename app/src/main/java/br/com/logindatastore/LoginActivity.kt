@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import br.com.logindatastore.databinding.ActivityLoginBinding
 import kotlinx.coroutines.runBlocking
@@ -26,6 +27,12 @@ class LoginActivity : AppCompatActivity() {
             btnLogin.setOnClickListener {
                 verifyUser()
             }
+
+            tvCreateAccount.setOnClickListener {
+                val intent = Intent(this@LoginActivity, RegistrationActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
     }
 
@@ -39,6 +46,8 @@ class LoginActivity : AppCompatActivity() {
             ) {
                 val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                 startActivity(intent)
+                finish()
+                DataStoreManager.setDataStore(preferencesKey = booleanPreferencesKey("HAS_LOGIN"), true)
             } else {
                 Toast.makeText(this@LoginActivity, "Usuário ou senha incorretos", Toast.LENGTH_SHORT).show()
             }

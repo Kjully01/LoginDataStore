@@ -29,8 +29,9 @@ class RegistrationActivity : AppCompatActivity() {
                     saveUser()
                     val intent = Intent(this@RegistrationActivity, LoginActivity::class.java)
                     startActivity(intent)
+                    finish()
                 } else {
-                    Toast.makeText(this@RegistrationActivity, "Deu Ruim", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegistrationActivity, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
                 }
             }
         }
