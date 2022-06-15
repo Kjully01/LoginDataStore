@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
                 verifyUser()
             }
 
-            tvCreateAccount.setOnClickListener {
+            btnCreateAccount.setOnClickListener {
                 val intent = Intent(this@LoginActivity, RegistrationActivity::class.java)
                 startActivity(intent)
                 finish()

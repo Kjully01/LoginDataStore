@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">LoginDataStore</string>
+    <string name="login">Login</string>
+    <string name="password">Senha</string>
+    <string name="create_account">Criar uma conta</string>
+    <string name="cpf">CPF</string>
+    <string name="age">Idade</string>
+    <string name="registration">Cadastrar</string>
+    <string name="logOut">Sair</string>
 </resources>

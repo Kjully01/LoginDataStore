@@ -11,7 +11,8 @@
         android:id="@+id/etNameLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Login"
+        android:layout_marginTop="150dp"
+        android:hint="@string/login"
         android:padding="16dp"
         android:maxLines="1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,7 +21,7 @@
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Senha"
+        android:hint="@string/password"
         android:padding="16dp"
         android:maxLines="1"
         app:layout_constraintTop_toBottomOf="@id/etNameLogin"/>
@@ -29,7 +30,7 @@
         android:id="@+id/etCPF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="CPF"
+        android:hint="@string/cpf"
         android:padding="16dp"
         android:maxLines="1"
         app:layout_constraintTop_toBottomOf="@id/etPassword" />
@@ -38,7 +39,7 @@
         android:id="@+id/etAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Idade"
+        android:hint="@string/age"
         android:padding="16dp"
         android:maxLines="1"
         app:layout_constraintTop_toBottomOf="@id/etCPF"/>
@@ -47,7 +48,9 @@
         android:id="@+id/btnRegistration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastrar"
+        android:text="@string/registration"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/default_color"
         app:layout_constraintTop_toBottomOf="@id/etAge"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
